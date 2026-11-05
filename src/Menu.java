@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("====================================");                         
     }
 
-    public void menuChoice(){
+    public void run(){
 
         Scanner scanner = new Scanner(System.in);
         int     iterator = 0;
@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("2. List All Patients");
             System.out.println("3. View / Manage Patient Details");
             System.out.println("4. Delete Patient");
-            System.out.println("5. Exit");
+            System.out.println("0. Exit");
             System.out.println("====================================");
             System.out.println("Select an option:");
         
@@ -59,7 +59,7 @@ public class Menu {
                 System.out.println("4");
                 break;
             
-            case 5:
+            case 0:
 
                 System.out.println("Bye");
                 break;    
