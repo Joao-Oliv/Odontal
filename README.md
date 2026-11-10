@@ -60,3 +60,6 @@ Displayed upon startup and after every completed action.
 5. Exit
 ====================================
 Select an option: 
+
+## Development
+Was used a simple aplication Java, using the javac to build the project and called the main class.

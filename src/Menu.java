@@ -1,12 +1,9 @@
 package src;
 
-import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Menu {
     
-    private List<Client> patientList;
     private Client client;
 
     public Menu(){
@@ -20,8 +17,9 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
         int     iterator = 0;
-
-        patientList = new ArrayList<>();
+        
+        client = new Client();
+        client.run();
 
         do{             
             System.out.println("1. Register New Patient");
@@ -35,6 +33,7 @@ public class Menu {
             iterator = scanner.nextInt();
             
             this.navegator(iterator);
+            
         } while(iterator != 0);
 
         scanner.close();
@@ -45,16 +44,14 @@ public class Menu {
 
         JavaUtils.clearTerminal( );
 
-        client = new Client();
-        
         switch (_iterator){            
             case 1:
-                client.create(patientList);
+                client.create();
                 break;
 
             case 2:
 
-                client.showPatients(patientList);
+                client.showPatients();
                 break;
 
             case 3:
