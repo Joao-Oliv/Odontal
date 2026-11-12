@@ -1,7 +1,6 @@
 package src;
 
 import java.io.IOException;
-import java.lang.reflect.GenericSignatureFormatError;
 import java.util.Scanner;
 
 public class JavaUtils {

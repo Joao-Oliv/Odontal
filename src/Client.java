@@ -20,7 +20,7 @@ public class Client{
     public void setClientId(int _clientId) { this.clientId = _clientId; }
     //public void setName(String _name)      { this.name     = _name; }
     //public void setAge(int _age)           { this.age      = _age; }
-    public void setNotes(String _notes)    { this.notes    = _notes; } 
+    //public void setNotes(String _notes)    { this.notes    = _notes; } 
 
     public void run(){
                 
@@ -38,14 +38,14 @@ public class Client{
             {
                 System.out.println("1. Register a patient");
                 System.out.println("Please insert the patient data:");
-                System.out.print("Name: ");                        
+                System.out.println("Name: ");                        
                 this.setName(scanner);
                 
-                System.out.print("Age: ");
+                System.out.println("Age: ");
                 this.setAge(scanner);
-
-                System.out.print("Notes: ");
-                this.setNotes(scanner.next());
+                
+                System.out.println("Notes: ");
+                this.setNotes(scanner);
                 this.setClientId(patientList.size() + 1);
 
                 patientList.add(this);      
@@ -88,7 +88,7 @@ public class Client{
         
                 try {
 
-                    this.name = _scanner.next();                    
+                    this.name = _scanner.nextLine();                    
                     validName = true;
 
                 } catch (Exception e) {
@@ -110,14 +110,12 @@ public class Client{
         
                 try {
 
-                    this.age = _scanner.nextInt();                    
+                    this.age = _scanner.nextInt();                         
                     validAge = true;
 
                 } catch (Exception e) {
 
-                    System.out.println("Warning: Invalid age, try again!");                
-                    
-                    _scanner.nextLine();
+                    System.out.println("Warning: Invalid age, try again!");                                    
                 }
 
             } while (!validAge);
