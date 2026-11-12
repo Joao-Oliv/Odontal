@@ -22,28 +22,31 @@ public class JavaUtils {
     public static boolean confirmMenu(){
 
         Scanner scanner = new Scanner(System.in);
+        String  iterator = "N";
         boolean ret = false;
-        int     iterator = 0;
+        boolean isCharValid = true;
 
         do {
 
-            System.out.println("Would like to leave?");
-            System.out.println("1. Yes");
-            System.out.println("0. No");
+            System.out.println("Would like to register another patient?");
+            System.out.println("Y. Yes");
+            System.out.println("N. No");
 
             try {
 
-                iterator = scanner.nextInt();
-        
+                iterator = scanner.next().toUpperCase();        
+                ret      = iterator != "Y" ? true : false;
             }
             catch (Exception e){
 
-                iterator = 1;
                 System.out.println("Invalid option, try again!");
 
+                isCharValid = false;
             }
 
-        } while (iterator != 1);
+        } while (!isCharValid);
+
+        scanner.close();
 
         return ret;
     } 

@@ -18,9 +18,9 @@ public class Client{
     public String getNotes() { return this.notes; }
 
     public void setClientId(int _clientId) { this.clientId = _clientId; }
-    //public void setName(String _name)      { this.name     = _name; }
+    public void setName(String _name)      { this.name     = _name; }
     //public void setAge(int _age)           { this.age      = _age; }
-    //public void setNotes(String _notes)    { this.notes    = _notes; } 
+    public void setNotes(String _notes)    { this.notes    = _notes; } 
 
     public void run(){
                 
@@ -32,20 +32,20 @@ public class Client{
         
             Scanner scanner = new Scanner(System.in);                        
 
-            JavaUtils.clearTerminal();  
+            do {
+                
+                JavaUtils.clearTerminal();  
 
-            do
-            {
                 System.out.println("1. Register a patient");
                 System.out.println("Please insert the patient data:");
                 System.out.println("Name: ");                        
-                this.setName(scanner);
+                this.setName(scanner.next());
                 
                 System.out.println("Age: ");
                 this.setAge(scanner);
                 
                 System.out.println("Notes: ");
-                this.setNotes(scanner);
+                this.setNotes(scanner.next());
                 this.setClientId(patientList.size() + 1);
 
                 patientList.add(this);      
@@ -78,28 +78,6 @@ public class Client{
         }
     }
 
-    public void setName(Scanner _scanner) {
-
-        boolean validName = false;
-
-        if (_scanner != null) {
-
-            do {
-        
-                try {
-
-                    this.name = _scanner.nextLine();                    
-                    validName = true;
-
-                } catch (Exception e) {
-
-                    System.out.println("Warning: Invalid characteres, try again!");
-                }
-
-            } while (!validName);
-        }
-    }
-
     public void setAge(Scanner _scanner) {
 
         boolean validAge = false;
@@ -119,28 +97,6 @@ public class Client{
                 }
 
             } while (!validAge);
-        }
-    }
-
-    public void setNotes(Scanner _scanner) {
-
-        boolean validName = false;
-
-        if (_scanner != null) {
-
-            do {
-        
-                try {
-
-                    this.notes = _scanner.next();                    
-                    validName = true;
-
-                } catch (Exception e) {
-
-                    System.out.println("Warning: Invalid note, try again!");
-                }
-
-            } while (!validName);
         }
     }
 }
